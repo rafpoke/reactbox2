@@ -6,6 +6,7 @@ public class ChangeLightFeats : MonoBehaviour
 {
     // Start is called before the first frame update
     private Light luz_main;
+    public float escala = 0.0f;
 
     public Music2Color handler;
     void Start()
@@ -16,7 +17,14 @@ public class ChangeLightFeats : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        luz_main.intensity = handler.intensidade;
+    {   
+        if (handler.intensidade > 6)
+        {
+            luz_main.intensity = 6;
+        }
+        else {
+            luz_main.intensity = 1;
+        }
+        
     }
 }

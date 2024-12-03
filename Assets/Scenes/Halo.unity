@@ -300,7 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6b3028de056a946a645030da69ce1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handler: {fileID: 0}
+  escala: 0.5
+  handler: {fileID: 1788569504}
 --- !u!108 &168185257
 Light:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.039793454, g: 0.076296695, b: 0.78113204, a: 1}
   m_Intensity: 7.36
   m_Range: 10
   m_SpotAngle: 29
@@ -371,12 +372,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168185255}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09126886, y: 0.62745374, z: 0.2103086, w: 0.7441385}
-  m_LocalPosition: {x: -3.37, y: 0.98, z: 1.48}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: -0.25824073, y: -0.9511892, z: -0.0026662273, w: 0.16894872}
+  m_LocalPosition: {x: 0.45204568, y: -0.10337341, z: 1.816065}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1260797945}
   m_LocalEulerAnglesHint: {x: -23.563, y: 77.657, z: 12.504}
 --- !u!1001 &294358635
 PrefabInstance:
@@ -468,6 +469,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 226e22fec82268444ae347ce0109be58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1297648149}
+    - targetCorrespondingSourceObject: {fileID: 366175167995203695, guid: 226e22fec82268444ae347ce0109be58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 168185258}
+    - targetCorrespondingSourceObject: {fileID: 366175167995203695, guid: 226e22fec82268444ae347ce0109be58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 953841673}
     - targetCorrespondingSourceObject: {fileID: 6502182839619065283, guid: 226e22fec82268444ae347ce0109be58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2091601190}
@@ -897,12 +904,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953841671}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.028562479, y: -0, z: -0, w: 0.999592}
-  m_LocalPosition: {x: 0.01, y: 2.4, z: -4.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.008815657, y: -0.86198723, z: 0.23604955, w: -0.44853213}
+  m_LocalPosition: {x: -2.8356383, y: 1.212392, z: 1.784496}
+  m_LocalScale: {x: 0.49999988, y: 0.5, z: 0.49999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1260797945}
   m_LocalEulerAnglesHint: {x: 3.273, y: 0, z: 0}
 --- !u!114 &953841674
 MonoBehaviour:
@@ -5879,6 +5886,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particulas: {fileID: 1246155099}
   auxiliar: {fileID: 1788569504}
+--- !u!4 &1260797945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 366175167995203695, guid: 226e22fec82268444ae347ce0109be58, type: 3}
+  m_PrefabInstance: {fileID: 294358635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297648147
 GameObject:
   m_ObjectHideFlags: 0
@@ -11076,7 +11088,6 @@ GameObject:
   - component: {fileID: 1788569503}
   - component: {fileID: 1788569506}
   - component: {fileID: 1788569504}
-  - component: {fileID: 1788569507}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -11133,23 +11144,6 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 5b76df682e91eee4d939e09bcb825232, type: 2}
   cores: {fileID: 1788569504}
   cor_aux: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &1788569507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788569501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efe160f77abe634c8094440a4bed023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClipSwitcher: {fileID: 140975125}
-  audioSource: {fileID: 0}
-  sampleSize: 1024
-  bassCutoff: 200
-  midCutoff: 2000
 --- !u!1 &1815135918
 GameObject:
   m_ObjectHideFlags: 0
@@ -16126,8 +16120,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1781117505}
-  - {fileID: 953841673}
-  - {fileID: 168185258}
   - {fileID: 294358635}
   - {fileID: 528297107}
   - {fileID: 777157316}
