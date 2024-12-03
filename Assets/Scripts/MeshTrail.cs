@@ -10,9 +10,12 @@ public class MeshTrail : MonoBehaviour
     public float meshRefreshRate = 0.1f;
     public float meshDestroyDelay = 3f;
     public Transform positionToSpawn;
+    public float threshold = 6;
 
     [Header("Shader Related")]
     public Material mat;
+
+    public Source2Color handler;
 
     private bool isTrailActive;
     private SkinnedMeshRenderer[] skinnedMeshRenderers;
@@ -24,7 +27,7 @@ public class MeshTrail : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKeyDown(KeyCode.Space) && !isTrailActive)
+        if(handler.intensidade > threshold && !isTrailActive)
         {
             isTrailActive = true;
             StartCoroutine (ActivateTrail(activeTime));
