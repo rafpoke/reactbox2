@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Music2Features : MonoBehaviour
 {
-    public AudioClipSwitcher2 audioClipSwitcher;
     public AudioSource audioSource; // Fonte de áudio a ser analisada
     public int sampleSize = 1024;   // Número de amostras no espectro (padrão 1024)
     public float bassCutoff = 200f; // Limite superior para graves (Hz)
-    public float midCutoff = 2000f; // Limite superior para médios (Hz)
+    public float midCutoff = 4000f; // Limite superior para médios (Hz)
     
     private float[] spectrum;       // Array para armazenar o espectro de áudio
     private float sampleRate;       // Taxa de amostragem do áudio
 
+    public float totalIntensity = 0f;
+    public float bassIntensity = 0f;
+    public float midIntensity = 0f;
+    public float hiIntensity = 0f;
+    public float dominantFrequency;
+
     void Start()
     {
-        audioSource = audioClipSwitcher.audioSource;
+        
         if (audioSource == null)
         {
             Debug.LogError("Nenhum AudioSource atribuído!");
@@ -24,6 +29,7 @@ public class Music2Features : MonoBehaviour
 
         spectrum = new float[sampleSize];
         sampleRate = AudioSettings.outputSampleRate;
+
     }
 
     void Update()
@@ -38,10 +44,10 @@ public class Music2Features : MonoBehaviour
         // Obtém o espectro de áudio
         audioSource.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
-        float totalIntensity = 0f;
-        float bassIntensity = 0f;
-        float midIntensity = 0f;
-        float hiIntensity = 0f;
+        totalIntensity = 0f;
+        bassIntensity = 0f;
+        midIntensity = 0f;
+        hiIntensity = 0f;
         float maxMagnitude = 0f;
         int maxIndex = 0;
 
@@ -68,11 +74,7 @@ public class Music2Features : MonoBehaviour
             }
         }
 
-        float dominantFrequency = maxIndex * sampleRate / (2 * spectrum.Length);
+        dominantFrequency = maxIndex * sampleRate / (2 * spectrum.Length);
 
-        // Exibe os valores no console
-        Debug.Log($"Frequência Principal: {dominantFrequency} Hz");
-        Debug.Log($"Intensidade Total: {totalIntensity}");
-        Debug.Log($"Grave: {bassIntensity}, Médio: {midIntensity}, Agudo: {hiIntensity}");
     }
 }

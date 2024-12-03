@@ -360,6 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 686321249}
   - component: {fileID: 686321248}
+  - component: {fileID: 686321250}
   m_Layer: 0
   m_Name: Additional scriptHolder
   m_TagString: Untagged
@@ -401,6 +402,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686321250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686321247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efe160f77abe634c8094440a4bed023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 809292410}
+  sampleSize: 1024
+  bassCutoff: 200
+  midCutoff: 2000
+  totalIntensity: 0
+  bassIntensity: 0
+  midIntensity: 0
+  hiIntensity: 0
+  dominantFrequency: 0
 --- !u!1 &795820864
 GameObject:
   m_ObjectHideFlags: 0
